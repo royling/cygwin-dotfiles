@@ -1,9 +1,13 @@
 Cygwin dotfiles
 ---
+# What this does?
 - Customize color and theme
 - Setup: zsh, vim, git
 
-From these awesome projects:
+# Screenshot
+![Screenshot](./screenshot.jpg?raw=true)
+
+# From these awesome projects:
 - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 - [The Ultimate vimrc](https://github.com/amix/vimrc)
 - [pathogen.vim](https://github.com/tpope/vim-pathogen)
