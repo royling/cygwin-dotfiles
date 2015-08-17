@@ -28,6 +28,7 @@ if [ ! -d "$USER_HOME/vimfiles/" ]; then
     git clone https://github.com/tpope/vim-surround
     git clone https://github.com/kien/ctrlp.vim
     git clone https://github.com/terryma/vim-multiple-cursors
+    git clone https://github.com/bling/vim-airline
     cd -
 fi
 ln -s $USER_HOME/vimfiles/ ~/.vim

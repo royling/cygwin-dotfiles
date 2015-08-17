@@ -133,6 +133,7 @@ if has("gui_running")
     set guioptions+=e
     set t_Co=256
     set guitablabel=%M\ %t
+    set guifont=Sauce_Code_Powerline:h11
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -171,6 +172,8 @@ set tw=500
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
+
+set nu "Line number
 
 
 """"""""""""""""""""""""""""""
@@ -243,8 +246,10 @@ set viminfo^=%
 " Always show the status line
 set laststatus=2
 
+let g:airline_powerline_fonts=1
+
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -394,4 +399,27 @@ function! <SID>BufcloseCloseIt()
      execute("bdelete! ".l:currentBufNum)
    endif
 endfunction
+
+" Start vim with maxmized window
+au GUIEnter * simalt ~x
+
+" CtrlP plugin
+set runtimepath^=~/vimfiles/bundle/ctrlp.vim
+let g:ctrlp_map = '<C-p>'
+let g:ctrlp_cmd = 'CtrlP'
+" Search by file name
+let g:ctrlp_by_filename = 1
+let g:ctrlp_regexp = 1
+" Show dot files
+let g:ctrlp_show_hidden = 1
+"let g:ctrlp_max_files = 2000
+" Open new file in a new tab when pressing <c-y>
+let g:ctrlp_open_new_file = 't'
+
+" multi-cursor
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-d>'
+"let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
 
