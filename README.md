@@ -14,3 +14,5 @@ Cygwin dotfiles
 - [mintty color schemes](https://github.com/oumu/mintty-color-schemes)
 - [base16-vim](https://github.com/chriskempson/base16-vim)
 - [Many awesome vim plugins](http://vimawesome.com/)
+### vim-airline
+- Patch fonts for [powerline](https://github.com/powerline/fonts)
