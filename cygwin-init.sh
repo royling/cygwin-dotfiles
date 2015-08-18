@@ -1,11 +1,13 @@
 #!/bin/bash
 
+CWD=`pwd`
 # Color and Theme
-cp .minttyrc .vimrc ~/
+ln -s $CWD/.minttyrc ~/.minttyrc
+ln -s $CWD/.vimrc ~/.vimrc
 
 # install oh-my-zsh
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh && cp ys.zsh-theme ~/.oh-my-zsh/themes/
-cp .zshrc ~/
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh && cp ys.zsh-theme ~/.oh-my-zsh/themes/ys-tweaked.zsh-theme
+ln -s $CWD/.zshrc ~/.zshrc
 
 current_user=`whoami`
 USER_HOME=/cygdrive/c/Users/$current_user/

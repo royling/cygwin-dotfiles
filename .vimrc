@@ -409,7 +409,7 @@ endfunction
 au GUIEnter * simalt ~x
 
 " CtrlP plugin
-set runtimepath^=~/vimfiles/bundle/ctrlp.vim
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " Search by file name
