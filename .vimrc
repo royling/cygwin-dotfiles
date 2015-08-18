@@ -211,6 +211,9 @@ map <leader>bd :Bclose<cr>
 " Close all the buffers
 map <leader>ba :1,1000 bd!<cr>
 
+map <leader>l :bnext<cr>
+map <leader>h :bprevious<cr>
+
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
@@ -247,6 +250,8 @@ set viminfo^=%
 set laststatus=2
 
 let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
+let g:airline_section_c='%F%m'
 
 " Format the status line
 "set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
