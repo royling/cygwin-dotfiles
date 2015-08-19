@@ -39,7 +39,9 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Pathogen for all vim plugins
 execute pathogen#infect()
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -117,6 +119,9 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" Show line number
+set number
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -126,6 +131,8 @@ syntax enable
 
 set background=dark
 colorscheme base16-solarized
+"let g:solarized_termcolors=256
+"colorscheme solarized
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -133,7 +140,7 @@ if has("gui_running")
     set guioptions+=e
     set t_Co=256
     set guitablabel=%M\ %t
-    set guifont=Sauce_Code_Powerline:h11
+    set guifont=Source_Code_Pro:h11
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -172,8 +179,6 @@ set tw=500
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
-
-set nu "Line number
 
 
 """"""""""""""""""""""""""""""
@@ -249,12 +254,13 @@ set viminfo^=%
 " Always show the status line
 set laststatus=2
 
+" Format the status line
+"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+
+" vim-airline plugin rocks
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 let g:airline_section_c='%F%m'
-
-" Format the status line
-"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -408,6 +414,7 @@ endfunction
 " Start vim with maxmized window
 au GUIEnter * simalt ~x
 
+
 " CtrlP plugin
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<C-p>'
@@ -421,10 +428,10 @@ let g:ctrlp_show_hidden = 1
 " Open new file in a new tab when pressing <c-y>
 let g:ctrlp_open_new_file = 't'
 
+
 " multi-cursor
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-d>'
 "let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
-
