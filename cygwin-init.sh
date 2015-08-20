@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CWD=`pwd`
+CWD=$(realpath $(dirname $0))
 # Color and Theme
 ln -s $CWD/.minttyrc ~/.minttyrc
 ln -s $CWD/.vimrc ~/.vimrc
