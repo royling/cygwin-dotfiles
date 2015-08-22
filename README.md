@@ -16,4 +16,4 @@ Cygwin dotfiles
 - [Many awesome vim plugins](http://vimawesome.com/)
 
 ### vim-airline
-- Patch fonts for [powerline](https://github.com/powerline/fonts)
+- Patch fonts for [powerline](https://github.com/powerline/fonts) (not required any more since the glyphs are added to the official Source Code Pro fonts)
