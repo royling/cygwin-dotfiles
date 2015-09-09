@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 CWD=$(realpath $(dirname $0))
 # Color and Theme
