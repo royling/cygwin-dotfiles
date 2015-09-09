@@ -128,19 +128,31 @@ set number
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable
-
-set background=dark
-colorscheme base16-solarized
-"let g:solarized_termcolors=256
-"colorscheme solarized
+set t_Co=256
+set guifont=Source_Code_Pro:h12
 
 " Set extra options when running in GUI mode
 if has("gui_running")
     set guioptions-=T
     set guioptions+=e
-    set t_Co=256
     set guitablabel=%M\ %t
-    set guifont=Source_Code_Pro:h11
+
+    set background=dark
+    colorscheme base16-solarized
+
+    " Disable scrollbars
+    set guioptions-=r
+    set guioptions-=R
+    set guioptions-=l
+    set guioptions-=L
+
+    " Start in fullscreen mode
+    au GUIEnter * simalt ~x
+else
+    "colorscheme solarized
+    "let g:solarized_termcolors=256
+    colorscheme desert
+    let g:colors_name="desert"
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -258,9 +270,15 @@ set laststatus=2
 "set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 " vim-airline plugin rocks
+let g:airline_theme="powerlineish"
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 let g:airline_section_c='%F%m'
+
+" [workaround] Disable airline in console vim
+"if !has("gui_running")
+"    au VimEnter * AirlineToggle
+"endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -410,9 +428,6 @@ function! <SID>BufcloseCloseIt()
      execute("bdelete! ".l:currentBufNum)
    endif
 endfunction
-
-" Start vim with maxmized window
-au GUIEnter * simalt ~x
 
 
 " CtrlP plugin
